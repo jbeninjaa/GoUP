@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LineRenderer))]
+
 public class Reticle : MonoBehaviour
 {
     [SerializeField] private LineRenderer playerLR; 
-
-    void  Awake(){
-        playerLR = GetComponent<LineRenderer>();
-    }
 
     public void RenderLine(Vector3 startPoint, Vector3 endPoint){
         playerLR.enabled = true;
@@ -24,6 +20,4 @@ public class Reticle : MonoBehaviour
     public void EndLine(){
         playerLR.enabled = false;
     }
-
-
 }

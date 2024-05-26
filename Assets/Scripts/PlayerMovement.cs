@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         currentPoint.z = 15;
         trajectoryLine.RenderLine(startPoint, currentPoint);
-        Debug.Log(currentPoint);
     }
 
     public void Relase() {
