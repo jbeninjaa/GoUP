@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 minPower;
     [SerializeField] private Vector2 maxPower;
 
+    [Header("References")]
+    private Reticle trajectoryLine; 
+
     private Camera cam;
     private Vector2 force;
     private Vector3 startPoint;
@@ -19,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start(){
         playerRB = GetComponent<Rigidbody2D>();
         cam = Camera.main;
+        trajectoryLine = GetComponent<Reticle>();
     }
 
     // Update is called once per frame
@@ -26,20 +30,29 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    public void Pull(){
+    public void Pull() {
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         startPoint.z = 15;
-        Debug.Log(startPoint);
+
     }
 
-    public void Relase(){
+    public void Drag() {
+        Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+        currentPoint.z = 15;
+        trajectoryLine.RenderLine(startPoint, currentPoint);
+        Debug.Log(currentPoint);
+    }
+
+    public void Relase() {
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         endPoint.z = 15;
-        Debug.Log(endPoint);
-
+        
+        // add Force to player
         float forceX = Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x);
         float forceY = Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y);
         force = new Vector2(forceX, forceY);
         playerRB.AddForce(force * power, ForceMode2D.Impulse);
+        
+        trajectoryLine.EndLine();
     }
 }
