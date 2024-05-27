@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class MoveLeftRight : MonoBehaviour
 {
-    private float minX = -1f; // minimum x position
-    private float maxX = 1f; // maximum x position
+    private float minX = -1.71f; // minimum x position
+    private float maxX = 1.7f; // maximum x position
     private float speed = 1f; // movement speed
-    private float amplitude = 2f; // amplitude of the sinusoidal motion
+    private float amplitude = 1.4f; // amplitude of the sinusoidal motion
 
     private float xOffset = 0f; // x offset for the sinusoidal motion
 
     // Update is called once per frame
     void Start(){
-        speed += Random.Range(-0.5f, 0.5f);
+        speed += Random.Range(-0.5f, 1f);
         amplitude += Random.Range(-0.5f, 0.5f);
     }
     void Update()

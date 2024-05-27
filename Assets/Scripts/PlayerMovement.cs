@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        
+
     }
 
     public void Pull() {
@@ -53,5 +54,17 @@ public class PlayerMovement : MonoBehaviour
         playerRB.AddForce(force * power, ForceMode2D.Impulse);
         
         trajectoryLine.EndLine();
+    }
+
+    public void UpdateScore(){
+        // int scoreToAdd = 0;
+        // float maxY = 0;
+        // if(maxY < transform.position.y){
+        //     maxY = transform.position.y;
+        // }
+
+        
+
+        GameManager.Instance.SetScore(100);
     }
 }

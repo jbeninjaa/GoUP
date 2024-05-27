@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatformSpawner : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     [SerializeField] private float maxPlatformSpacing = 1.0f; // vertical spacing between platforms
     [SerializeField] private Transform playerTransform;
 
-    private float spawnPositionY = 0f;
+    private float spawnPositionY = 0.45f;
     private float despawnPositionY = 5f;
     private List<GameObject> activePlatforms; // List to keep track of active 
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class PlatformSpawner : MonoBehaviour
     private void SpawnPlatform(){
         
         GameObject platformPrefab = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
-        Vector2 spawnPosition = new Vector2(Random.Range(-2f, 2f), spawnPositionY);
+        Vector2 spawnPosition = new Vector2(Random.Range(-1.7f, 1.7f), spawnPositionY);
 
         GameObject newPlatform = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         activePlatforms.Add(newPlatform);
