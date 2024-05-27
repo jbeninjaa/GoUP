@@ -41,4 +41,14 @@ public class PlatformSpawner : MonoBehaviour
         activePlatforms.Add(newPlatform);
         spawnPositionY += Random.Range(minPlatformSpacing, maxPlatformSpacing);
     }
+
+    private void DespawnPlatform(){
+            if (activePlatforms.Count > 0) {
+                GameObject platformToDespawn = activePlatforms[0];
+            if (playerTransform.position.y - platformToDespawn.transform.position.y > despawnPositionY) {
+                activePlatforms.RemoveAt(0);
+                Destroy(platformToDespawn);
+            }
+        }
+    }
 }

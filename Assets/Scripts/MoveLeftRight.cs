@@ -38,8 +38,8 @@ public class MoveLeftRight : MonoBehaviour
 
     // detach from the platform when exiting collision
     void OnCollisionExit2D(Collision2D collision){
-    if (collision.gameObject.CompareTag("Player")){
-        collision.gameObject.transform.parent = null;
+        if (collision.gameObject.CompareTag("Player")){
+            collision.gameObject.transform.parent = null;
+        }
     }
-}
 }
