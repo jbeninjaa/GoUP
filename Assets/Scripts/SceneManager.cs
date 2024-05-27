@@ -30,17 +30,6 @@ public class SceneManagerScript : MonoBehaviour
         
     }
 
-    public void OnPlayButtonClicked()
-    {
-        // Load the main game scene
-        SceneManager.LoadScene("GameScene");
-    }
-
-    public void OnQuitButtonClicked()
-    {
-         // Quit the application
-        Application.Quit();
-    }
 
     public void LoadEndScene(){
         SceneManager.LoadScene("EndScene");

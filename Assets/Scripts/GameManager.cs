@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     private bool isGameOver = false;
     private int score = 0;
     private int finalScore;
+    private string playerName;
+
+
 
     private void Awake() {
         // Game Manager should be generated between scenes 
@@ -53,6 +57,12 @@ public class GameManager : MonoBehaviour
     public void SetFinalScore(int finalScore){
         this.finalScore = finalScore;
     }
+    public void SetPlayerName(string playerName){
+        this.playerName = playerName;
+    }
+    public string GetPlayerName(){
+        return playerName;
+    }
     #endregion
 
     public void GameOver(){
@@ -66,7 +76,6 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         score = 0;
         finalScore = 0;
+        playerName = null;
     }
-
-
 }

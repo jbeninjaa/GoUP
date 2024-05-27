@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     private int maxScoreToAdd = 0;
     
     private void Start(){
-
+        
     }
 
     private void Update(){
