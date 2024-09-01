@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] platformPrefabs;
-    [SerializeField] private float minPlatformSpacing = 0.3f; // vertical spacing between platforms
+    [SerializeField] private float minPlatformSpacing = 0.5f; // vertical spacing between platforms
     [SerializeField] private float maxPlatformSpacing = 1.0f; // vertical spacing between platforms
     [SerializeField] private Transform playerTransform;
 

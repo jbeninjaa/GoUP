@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
-  - Acid
+  - Border
+  - Bottom
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,15 +42,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3571869635
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Border
-    uniqueID: 494360827
+    uniqueID: 2129299607
     locked: 0
-  - name: Background
-    uniqueID: 2459571335
+  - name: Bottom
+    uniqueID: 2921831377
     locked: 0
-  - name: New Layer 3
-    uniqueID: 2309225141
+  - name: Platform
+    uniqueID: 896469605
+    locked: 0
+  - name: Enemy
+    uniqueID: 2073855293
+    locked: 0
+  - name: Player
+    uniqueID: 3977066165
     locked: 0

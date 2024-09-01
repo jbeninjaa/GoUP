@@ -31,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    void LateUpdate() {
+        Vector3 screenPos = cam.WorldToViewportPoint(transform.position);
+        if (screenPos.x < 0) {
+            transform.position = new Vector3(cam.ViewportToWorldPoint(new Vector3(1, screenPos.y, screenPos.z)).x, transform.position.y, transform.position.z);
+        } else if (screenPos.x > 1) {
+            transform.position = new Vector3(cam.ViewportToWorldPoint(new Vector3(0, screenPos.y, screenPos.z)).x, transform.position.y, transform.position.z);
+        }
+    }
+
     public void Pull() {
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         startPoint.z = 15;
@@ -47,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         endPoint.z = 15;
         
+        // Set the velocity of the player to zero
+        playerRB.velocity = Vector2.zero;
         // add Force to player
         float forceX = Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x);
         float forceY = Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y);
@@ -67,4 +78,6 @@ public class PlayerMovement : MonoBehaviour
 
         GameManager.Instance.SetScore(100);
     }
+
+    
 }

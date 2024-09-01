@@ -10,11 +10,11 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
-    guid: 167cc3e68718cd84386041e0a178ead7
+    guid: 8ef4177ced6fd5e4f840a3807b8367e1
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
-    guid: 29a30d56cab4a4d44bfb075361df6e66
+    guid: 288c7a034cca7b640b5b08069783e117
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
-    guid: 0112b81ebc2d7df44aa10eb5a61c4b18
+    guid: 773c024a5b1e5ff448d7a0ba126989b5
   m_configObjects: {}
